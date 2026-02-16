@@ -23,11 +23,11 @@ class CmsSlotBlockProductCategoryConnectorToProductCategoryStorageClientBridge i
     }
 
     /**
-     * @param list<int> $productAbstractIds
+     * @param array<int> $productAbstractIds
      * @param string $localeName
      * @param string $storeName
      *
-     * @return list<\Generated\Shared\Transfer\ProductAbstractCategoryStorageTransfer>
+     * @return array<\Generated\Shared\Transfer\ProductAbstractCategoryStorageTransfer>
      */
     public function findBulkProductAbstractCategory(array $productAbstractIds, string $localeName, string $storeName): array
     {

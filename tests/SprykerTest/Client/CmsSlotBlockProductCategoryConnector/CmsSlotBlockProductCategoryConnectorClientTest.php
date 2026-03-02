@@ -47,9 +47,6 @@ class CmsSlotBlockProductCategoryConnectorClientTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -57,9 +54,6 @@ class CmsSlotBlockProductCategoryConnectorClientTest extends Unit
         $this->tester->addDependencies();
     }
 
-    /**
-     * @return void
-     */
     public function testIsSlotBlockConditionApplicableReturnsTrueWithCorrectData(): void
     {
         // Arrange
@@ -76,9 +70,6 @@ class CmsSlotBlockProductCategoryConnectorClientTest extends Unit
         $this->assertTrue($isSlotBlockConditionApplicable);
     }
 
-    /**
-     * @return void
-     */
     public function testIsSlotBlockConditionApplicableReturnsFalseWithIncorrectData(): void
     {
         // Arrange
@@ -95,9 +86,6 @@ class CmsSlotBlockProductCategoryConnectorClientTest extends Unit
         $this->assertFalse($isSlotBlockConditionApplicable);
     }
 
-    /**
-     * @return void
-     */
     public function testIsCmsBlockVisibleInSlotReturnsTrueWithAllKeyProvided(): void
     {
         // Arrange
@@ -118,9 +106,6 @@ class CmsSlotBlockProductCategoryConnectorClientTest extends Unit
         $this->assertTrue($isCmsBlockVisibleInSlot);
     }
 
-    /**
-     * @return void
-     */
     public function testIsCmsBlockVisibleInSlotReturnsTrueWithCorrectProductData(): void
     {
         // Arrange
@@ -142,9 +127,6 @@ class CmsSlotBlockProductCategoryConnectorClientTest extends Unit
         $this->assertTrue($isCmsBlockVisibleInSlot);
     }
 
-    /**
-     * @return void
-     */
     public function testIsCmsBlockVisibleInSlotReturnsTrueWithCorrectCategoryData(): void
     {
         // Arrange
@@ -174,9 +156,6 @@ class CmsSlotBlockProductCategoryConnectorClientTest extends Unit
         $this->assertTrue($isCmsBlockVisibleInSlot);
     }
 
-    /**
-     * @return void
-     */
     public function testIsCmsBlockVisibleInSlotReturnsFalseWithIncorrectData(): void
     {
         // Arrange
@@ -206,11 +185,6 @@ class CmsSlotBlockProductCategoryConnectorClientTest extends Unit
         $this->assertFalse($isCmsBlockVisibleInSlot);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductAbstractCategoryStorageTransfer $productAbstractCategoryStorageTransfer
-     *
-     * @return void
-     */
     protected function setProductCategoryStorageClientMock(
         ProductAbstractCategoryStorageTransfer $productAbstractCategoryStorageTransfer
     ): void {
@@ -226,9 +200,6 @@ class CmsSlotBlockProductCategoryConnectorClientTest extends Unit
         );
     }
 
-    /**
-     * @return \Spryker\Client\CmsSlotBlockProductCategoryConnector\CmsSlotBlockProductCategoryConnectorClientInterface
-     */
     public function getCmsSlotBlockProductCategoryConnectorClient(): CmsSlotBlockProductCategoryConnectorClientInterface
     {
         return $this->tester
@@ -237,31 +208,16 @@ class CmsSlotBlockProductCategoryConnectorClientTest extends Unit
             ->client();
     }
 
-    /**
-     * @param array $seedData
-     *
-     * @return \Generated\Shared\Transfer\CmsSlotParamsTransfer
-     */
     public function haveCmsSlotParams(array $seedData = []): CmsSlotParamsTransfer
     {
         return (new CmsSlotParamsBuilder($seedData))->build();
     }
 
-    /**
-     * @param array $seedData
-     *
-     * @return \Generated\Shared\Transfer\ProductAbstractCategoryStorageTransfer
-     */
     public function haveProductAbstractCategoryStorage(array $seedData = []): ProductAbstractCategoryStorageTransfer
     {
         return (new ProductAbstractCategoryStorageBuilder($seedData))->build();
     }
 
-    /**
-     * @param array $seedData
-     *
-     * @return \Generated\Shared\Transfer\ProductCategoryStorageTransfer
-     */
     public function haveProductCategoryStorage(array $seedData = []): ProductCategoryStorageTransfer
     {
         return (new ProductCategoryStorageBuilder($seedData))->build();

@@ -29,11 +29,6 @@ class ProductCategoryReader implements ProductCategoryReaderInterface
      */
     protected $storeClient;
 
-    /**
-     * @param \Spryker\Client\CmsSlotBlockProductCategoryConnector\Dependency\Client\CmsSlotBlockProductCategoryConnectorToLocaleClientInterface $localeClient
-     * @param \Spryker\Client\CmsSlotBlockProductCategoryConnector\Dependency\Client\CmsSlotBlockProductCategoryConnectorToProductCategoryStorageClientInterface $productCategoryStorageClient
-     * @param \Spryker\Client\CmsSlotBlockProductCategoryConnector\Dependency\Client\CmsSlotBlockProductCategoryConnectorToStoreClientInterface $storeClient
-     */
     public function __construct(
         CmsSlotBlockProductCategoryConnectorToLocaleClientInterface $localeClient,
         CmsSlotBlockProductCategoryConnectorToProductCategoryStorageClientInterface $productCategoryStorageClient,

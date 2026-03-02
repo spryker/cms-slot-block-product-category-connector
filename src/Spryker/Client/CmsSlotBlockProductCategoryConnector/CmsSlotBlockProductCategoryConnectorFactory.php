@@ -18,9 +18,6 @@ use Spryker\Client\Kernel\AbstractFactory;
 
 class CmsSlotBlockProductCategoryConnectorFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\CmsSlotBlockProductCategoryConnector\Resolver\ProductCategoryCmsSlotBlockConditionResolverInterface
-     */
     public function createProductCategoryCmsSlotBlockConditionResolver(): ProductCategoryCmsSlotBlockConditionResolverInterface
     {
         return new ProductCategoryCmsSlotBlockConditionResolver(
@@ -28,9 +25,6 @@ class CmsSlotBlockProductCategoryConnectorFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\CmsSlotBlockProductCategoryConnector\Reader\ProductCategoryReaderInterface
-     */
     public function createProductCategoryReader(): ProductCategoryReaderInterface
     {
         return new ProductCategoryReader(
@@ -40,25 +34,16 @@ class CmsSlotBlockProductCategoryConnectorFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\CmsSlotBlockProductCategoryConnector\Dependency\Client\CmsSlotBlockProductCategoryConnectorToLocaleClientInterface
-     */
     public function getLocaleClient(): CmsSlotBlockProductCategoryConnectorToLocaleClientInterface
     {
         return $this->getProvidedDependency(CmsSlotBlockProductCategoryConnectorDependencyProvider::CLIENT_LOCALE);
     }
 
-    /**
-     * @return \Spryker\Client\CmsSlotBlockProductCategoryConnector\Dependency\Client\CmsSlotBlockProductCategoryConnectorToProductCategoryStorageClientInterface
-     */
     public function getProductCategoryStorageClient(): CmsSlotBlockProductCategoryConnectorToProductCategoryStorageClientInterface
     {
         return $this->getProvidedDependency(CmsSlotBlockProductCategoryConnectorDependencyProvider::CLIENT_PRODUCT_CATEGORY_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Client\CmsSlotBlockProductCategoryConnector\Dependency\Client\CmsSlotBlockProductCategoryConnectorToStoreClientInterface
-     */
     public function getStoreClient(): CmsSlotBlockProductCategoryConnectorToStoreClientInterface
     {
         return $this->getProvidedDependency(CmsSlotBlockProductCategoryConnectorDependencyProvider::CLIENT_STORE);

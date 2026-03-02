@@ -19,31 +19,17 @@ class ProductCategoryCmsSlotBlockConditionResolver implements ProductCategoryCms
      */
     protected $productCategoryReader;
 
-    /**
-     * @param \Spryker\Client\CmsSlotBlockProductCategoryConnector\Reader\ProductCategoryReaderInterface $productCategoryReader
-     */
     public function __construct(ProductCategoryReaderInterface $productCategoryReader)
     {
         $this->productCategoryReader = $productCategoryReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockTransfer $cmsSlotBlockTransfer
-     *
-     * @return bool
-     */
     public function isSlotBlockConditionApplicable(CmsSlotBlockTransfer $cmsSlotBlockTransfer): bool
     {
         return $cmsSlotBlockTransfer->getConditions()
             ->offsetExists(CmsSlotBlockProductCategoryConnectorConfig::CONDITION_KEY);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CmsSlotBlockTransfer $cmsSlotBlockTransfer
-     * @param \Generated\Shared\Transfer\CmsSlotParamsTransfer $cmsSlotParamsTransfer
-     *
-     * @return bool
-     */
     public function isCmsBlockVisibleInSlot(
         CmsSlotBlockTransfer $cmsSlotBlockTransfer,
         CmsSlotParamsTransfer $cmsSlotParamsTransfer

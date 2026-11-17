@@ -45,7 +45,7 @@ class ProductCategoryCmsSlotBlockConditionResolver implements ProductCategoryCms
         return $cmsSlotParamsTransfer->getIdProductAbstract()
             && (
                 in_array($cmsSlotParamsTransfer->getIdProductAbstract(), $cmsSlotBlockConditionTransfer->getProductIds())
-                || $this->getIsProductInCategoryIds(
+                || $this->isProductInCategoryIds(
                     $cmsSlotParamsTransfer->getIdProductAbstract(),
                     $cmsSlotBlockConditionTransfer->getCategoryIds(),
                 )
@@ -58,7 +58,7 @@ class ProductCategoryCmsSlotBlockConditionResolver implements ProductCategoryCms
      *
      * @return bool
      */
-    protected function getIsProductInCategoryIds(int $idProductAbstract, array $conditionCategoryIds): bool
+    protected function isProductInCategoryIds(int $idProductAbstract, array $conditionCategoryIds): bool
     {
         $productCategoryIds = $this->productCategoryReader->getAbstractProductCategoryIds($idProductAbstract);
 
